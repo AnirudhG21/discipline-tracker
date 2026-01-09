@@ -1,2 +1,10 @@
 npm run dev
 http://localhost:5000/
+
+
+Default user created: {
+  id: 1,
+  email: 'admin@local.app',
+  password: 'temp-password',
+  createdAt: 2026-01-09T18:47:29.367Z
+}
