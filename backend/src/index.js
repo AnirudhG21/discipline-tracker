@@ -17,3 +17,9 @@ app.use("/api/tasks", taskRoutes);
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+const emailRoutes = require("./routes/email.routes");
+const confirmRoutes = require("./routes/confirm.routes");
+
+app.use("/api/email", emailRoutes);
+app.use("/api/confirm", confirmRoutes);
