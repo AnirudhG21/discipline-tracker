@@ -3,6 +3,12 @@ const { generateToken } = require("../services/token.service");
 const { sendTaskEmail } = require("../services/email.service");
 
 exports.sendTaskReminder = async (req, res) => {
+  const cronSecret = req.headers["x-cron-secret"];
+
+  if (cronSecret !== process.env.CRON_SECRET) {
+    return res.status(401).json({ message: "Unauthorized cron request" });
+  }
+
   try {
     const tasks = await prisma.task.findMany({
       where: { isActive: true },
