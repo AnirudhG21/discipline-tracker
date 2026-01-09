@@ -23,7 +23,7 @@ exports.sendTaskReminder = async (req, res) => {
       const confirmUrl = `${process.env.APP_BASE_URL}/api/confirm?token=${token}`;
 
       await sendTaskEmail({
-        to: "yourgmail@gmail.com",
+        to: "anirudhg2003@gmail.com",
         taskName: task.name,
         confirmUrl,
       });
