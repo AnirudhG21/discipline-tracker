@@ -8,6 +8,9 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use("/api/progress", require("./routes/progress.routes"));
+app.use("/api/analytics", require("./routes/analytics.routes"));
+
 
 app.get("/", (req, res) => {
   res.send("Discipline Tracker Backend is running 🚀");
