@@ -9,7 +9,7 @@ import {
   CartesianGrid,
 } from "recharts";
 
-const API = "http://localhost:5000";
+const API = import.meta.env.VITE_API_URL;
 
 export default function Dashboard() {
   const [tasks, setTasks] = useState([]);
